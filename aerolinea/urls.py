@@ -16,6 +16,8 @@ Including another URLconf
 from pasajes.views import TbClienteViewSet
 from pasajes.views import TbVueloViewSet
 from pasajes.views import TbPasajeViewSet
+from pasajes.views import TbDestinoViewSet
+from pasajes.views import TbItinerarioViewSet
 
 from rest_framework.routers import SimpleRouter
 
@@ -27,8 +29,10 @@ router = SimpleRouter()
 router.register(r'clientes', TbClienteViewSet)
 router.register(r'vuelos', TbVueloViewSet)
 router.register(r'pasajes', TbPasajeViewSet)
+router.register(r'destinos', TbDestinoViewSet)
+router.register(r'itinerarios',TbItinerarioViewSet)
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
-    url(r'^', include(router.urls)),
+    url(r'^',include(router.urls)),
 ]
